@@ -3,13 +3,13 @@ import MsgsArea from './MsgsArea/MsgsArea';
 import ChatControllers from './ChatControllers/ChatControllers';
 
 
-export default function ChatArea({chatMsgs}){
+export default function ChatArea({chatMsgs, currentActiveChatId, appendNewMsg, clientData}){
     
     return(
         <div className="chatAreaDiv">
             <ChatTitle />
-            <MsgsArea chatMsgs={chatMsgs}/>
-            <ChatControllers />
+            <MsgsArea clientData = {clientData} chatMsgs={chatMsgs}/>
+            <ChatControllers clientData = {clientData} currentActiveChatId = {currentActiveChatId} appendNewMsg = {appendNewMsg}/>
         </div>
     );
 }
